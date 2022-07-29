@@ -1,36 +1,41 @@
 # Level1_Design2 Verification
 The verification environment is setup using Vyoma's UpTickPro provided for the hackathon.
-![Screenshot (169)](https://user-images.githubusercontent.com/109639328/181598210-7c2f25d2-bfab-4882-91bb-725c76d53ecd.png)
+![Screenshot (176)](https://user-images.githubusercontent.com/109639328/181683501-e2d68161-469a-4714-8256-4ad01fe69f15.png)
 
 # Verification Environment
-The CoCoTb based Python test is developed as explained. The test drives inputs to the Design Under Test (adder module here) which takes in 2-bit inputs from inp0 to inp30, 5-bit input as sel and gives 2-bit output out
+The CoCoTb based Python test is developed as explained. The test drives inputs to the Design Under Test (adder module here) which takes inputs  inp_bit,reset,clk  and gives 1-bit output seq_seen
 
-The values are assigned to the input port using random inputs.
+The values are assigned to the input port using predefined list inputs consists only binary values.
 
 The assert statement is used for comparing the mux's outut to the expected value.
 
 The following error is seen:\
-assert dut.out.value==Out,f"mux result is incorrect"\
-AssertionError: mux result is incorrect.
+assert dut.seq_seen.value==output,f"Random est failed:dut.seq_seen.value=0,output=1"\
+AssertionError: seq_detect_1011 design failed to detect 1011 sequence.
 
 # Test Scenario
-Test inputs: inp13=0 and sel=13\
-Expected output: out=1\
-Observed output in the DUT: DUT.out=0\
+Test inputs: inp_list=[1,1,0,1,0,1,1,0,1,1] and reset=0\
+Expected output: if (seq_1011_detected)
+seq_seen = 1 
+\
+else 
+seq_seen = 0
+                 
+Observed output in the DUT: DUT.seq_seen=0 even if seq_1011_detected\
 \
 Output mismatches for the above inputs proving that there is a design bug.
 
 # Design Bug
+case(inp_bit or current_state)\
+SEQ_1011:  \
+      begin\
+        next_state = SEQ_10;              #bug \
+      end
 
-case(sel)\
-   begin \
-   5'b01101: out=inp12\
-   end\
-   \
-For the mux design, the selection should be 5'b01100 to select inp12 instead of 5'b01101 as in the design code.
+For the sequece detector design, the seq_seen should be 1'b1 when the seq_1011 detected instead of 1'b0 as in the design code.
 
 # Design Fix
 
 Updating the design and re-running the test makes the test pass.
 
-![Screenshot (171)](https://user-images.githubusercontent.com/109639328/181598604-b0f79d4d-2c4c-4d86-abdc-5f05d613047a.png)
+![Screenshot (179)](https://user-images.githubusercontent.com/109639328/181683778-cea66221-2b2e-4b20-9fb7-cd9e2c382d81.png)
