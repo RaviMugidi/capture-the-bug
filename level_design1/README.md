@@ -33,4 +33,4 @@ For the mux design, the selection should be 5'b01100 to select inp12 instead of 
 
 Updating the design and re-running the test makes the test pass.
 
-![Screenshot (171)](https://user-images.githubusercontent.com/109639328/181598604-b0f79d4d-2c4c-4d86-abdc-5f05d613047a.png)
+![Screenshot (188)](https://user-images.githubusercontent.com/109639328/182080315-6e446c42-3771-4004-9883-54a18db410b4.png)
