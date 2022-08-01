@@ -65,4 +65,4 @@ async def test_seq_bug1(dut):
        await FallingEdge(dut.clk)
 
        dut._log.info(f'in={i:01} output={output:01} seq_seen={int(dut.seq_seen.value):01}')
-       assert dut.seq_seen.value==output,f"Random test failed with:Random est failed:dut.seq_seen.value=0,output=1")
+       assert dut.seq_seen.value==output,f"Random test failed with"

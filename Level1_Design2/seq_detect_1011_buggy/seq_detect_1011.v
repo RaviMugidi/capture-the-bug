@@ -66,7 +66,7 @@ module seq_detect_1011(seq_seen, inp_bit, reset, clk);
       end
       SEQ_1011:  //bug fixed
       begin
-        next_state = SEQ_10;
+        next_state =IDLE;
       end
     endcase
   end
