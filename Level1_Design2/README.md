@@ -38,4 +38,4 @@ For the sequece detector design, the seq_seen should be 1'b1 when the seq_1011 d
 
 Updating the design and re-running the test makes the test pass.
 
-![Screenshot (179)](https://user-images.githubusercontent.com/109639328/181683778-cea66221-2b2e-4b20-9fb7-cd9e2c382d81.png)
+![Screenshot (190)](https://user-images.githubusercontent.com/109639328/182080936-956f23ce-95f6-4c9b-b000-bf08adf0734e.png)
