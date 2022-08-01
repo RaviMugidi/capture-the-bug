@@ -25,7 +25,7 @@ Output mismatches for the above inputs proving that there is a design bug.
 case(sel)\
    begin \
    5'b01101: out=inp12\
-   end\
+   end \
    \
 For the mux design, the selection should be 5'b01100 to select inp12 instead of 5'b01101 as in the design code.
 
