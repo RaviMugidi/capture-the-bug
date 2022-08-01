@@ -1,4 +1,4 @@
-# Level1_Design1 Verification
+# Level3_Design Verification
 The verification environment is setup using Vyoma's UpTickPro provided for the hackathon.
 ![Screenshot (185)](https://user-images.githubusercontent.com/109639328/182077963-39b7b1a0-ced6-4cce-a125-aceda614dc08.png)
 
