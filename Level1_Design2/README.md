@@ -7,7 +7,7 @@ The [CoCoTb](https://www.cocotb.org/) based Python test is developed as explaine
 
 The values are assigned to the input port using predefined list inputs consists only binary values.
 
-The assert statement is used for comparing the mux's outut to the expected value.
+The assert statement is used for comparing the seq_detect_1011's outut to the expected value.
 ```
 dut.inp[i].value=inp[i]
 inp_list=[1,1,0,1,1,0,1,1]
