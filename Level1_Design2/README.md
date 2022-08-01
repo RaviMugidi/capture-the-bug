@@ -11,7 +11,6 @@ The assert statement is used for comparing the mux's outut to the expected value
 ```
 dut.inp[i].value=inp[i]
 inp_list=[1,1,0,1,1,0,1,1]
-
 ```
 
 The following error is seen:
