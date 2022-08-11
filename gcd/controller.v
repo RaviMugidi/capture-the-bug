@@ -1,4 +1,3 @@
-`timescale 1ns / 1ps
 module controller(a_ld,b_ld,a_sel,b_sel,output_en,done,clk,rst,go,a_gt_b,a_lt_b,a_eq_b);
 
 input clk,rst,go;
